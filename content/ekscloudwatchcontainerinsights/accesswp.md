@@ -4,14 +4,14 @@ chapter: false
 weight: 3
 ---
 
-Once you have your URL, you can try and Login with the following credentials to see your blog and make sure it’s working. You’ll need your username and password so run the following command to get those. 
+Once you have your URL, you can login to see your blog and make sure it’s working. You’ll need your username and password so run the following command to get those. 
 
 
 ```
 echo Username: user
 echo Password: $(kubectl get secret --namespace default understood-zebu-wordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode
 ```
-*Make sure to adjust the understood-zebu-wordpress to match your version.*
+*Make sure to adjust the understood-zebu-wordpress to match your version name from your install.*
 
 ![alt text](/images/ekscwci/wplogin.png "WP Login")
 

@@ -26,4 +26,11 @@ With this quick start it will push the necessary daemon sets to collect the data
 
 That's it. It's that simple to install the agent and get it up and running. You can follow the manual steps in the full documentation, but with the Quickstart the deployment of the Daemon is easy and quick! 
 
+If you typed the command manually and accidentally mistyped the region, you can run the following command to uninstall CloudWatch Container insights and install it again. 
+
+```
+curl https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/quickstart/cwagent-fluentd-quickstart.yaml | sed "s/{{cluster_name}}/eksworkshop-eksctl/;s/{{region_name}}/us-east-2/" | kubectl delete -f -
+```
+Adjust for the mistyped region in your command above. 
+
 ### Now onto verifying the data is being collected! 
